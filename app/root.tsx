@@ -22,7 +22,10 @@ export const links: Route.LinksFunction = () => [
     href: "https://fonts.gstatic.com",
     crossOrigin: "anonymous",
   },
-  /* Placeholder for Google Fonts link */
+  {
+    rel: "stylesheet",
+    href: "https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700;900&family=Lato:wght@300;400;700&family=Noto+Sans+Devanagari:wght@400;600;700&display=swap",
+  },
 ];
 
 export function Layout({ children }: { children: React.ReactNode }) {
