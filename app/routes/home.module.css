@@ -505,7 +505,7 @@
 .leaderImageWrap {
   position: relative;
   width: 100%;
-  height: 320px;
+  height: 420px;
   overflow: hidden;
   background: #0e7d8a;
   display: flex;
@@ -517,7 +517,7 @@
   width: 100%;
   height: 100%;
   object-fit: cover;
-  object-position: center 15%;
+  object-position: center top;
   display: block;
 }
 
