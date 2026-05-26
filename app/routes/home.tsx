@@ -6,6 +6,7 @@ import Navbar from "~/components/navbar/navbar";
 import Footer from "~/components/footer/footer";
 import CampusSlider from "~/components/campus-slider/campus-slider";
 import { STAFF, STAFF_CATEGORIES } from "~/data/staff";
+import Shlokas from "~/components/shlokas/shlokas";
 
 export function meta({}: Route.MetaArgs) {
   return [
@@ -351,6 +352,7 @@ export default function Home() {
 
       <CoursesSection />
       <SubjectsSection />
+      <Shlokas />
       <LeadershipSection />
       <StaffPreviewSection />
       <CampusTourSection />

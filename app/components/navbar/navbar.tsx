@@ -17,7 +17,8 @@ export default function Navbar() {
             Home
           </NavLink>
           <NavLink to="/#courses" className={styles.link}>Courses</NavLink>
-          <NavLink to="/#leadership" className={styles.link}>Leadership</NavLink>
+          <NavLink to="/#shlokas" className={styles.link}>Shlokas</NavLink>
+          <NavLink to="/staff" className={({ isActive }) => isActive ? `${styles.link} ${styles.active}` : styles.link}>Our People</NavLink>
           <NavLink to="/#campus" className={styles.link}>Campus</NavLink>
           <NavLink to="/#contact" className={styles.link}>Contact</NavLink>
         </nav>

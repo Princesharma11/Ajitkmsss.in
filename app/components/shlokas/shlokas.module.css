@@ -1,0 +1,255 @@
+/* ═══════════════════ SHLOKAS SECTION ═══════════════════ */
+.shlokaSection {
+  padding: var(--space-3xl) var(--space-lg);
+  background: linear-gradient(160deg, #1a0000 0%, #2d0a0a 40%, #0e0505 100%);
+  position: relative;
+  overflow: hidden;
+}
+
+.shlokaSection::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(ellipse at 20% 30%, rgba(212,160,23,0.12) 0%, transparent 60%),
+    radial-gradient(ellipse at 80% 70%, rgba(139,0,0,0.20) 0%, transparent 55%);
+  pointer-events: none;
+}
+
+.mandalaLeft,
+.mandalaRight {
+  position: absolute;
+  width: 320px;
+  height: 320px;
+  border-radius: 50%;
+  border: 1px solid rgba(212,160,23,0.08);
+  pointer-events: none;
+}
+
+.mandalaLeft {
+  left: -120px;
+  top: 50%;
+  transform: translateY(-50%);
+  box-shadow: 0 0 0 40px rgba(212,160,23,0.04), 0 0 0 80px rgba(212,160,23,0.02);
+}
+
+.mandalaRight {
+  right: -120px;
+  top: 30%;
+  transform: translateY(-50%);
+  box-shadow: 0 0 0 40px rgba(139,0,0,0.06), 0 0 0 80px rgba(139,0,0,0.03);
+}
+
+.inner {
+  max-width: 900px;
+  margin: 0 auto;
+  position: relative;
+  z-index: 1;
+}
+
+.badge {
+  display: inline-block;
+  background: rgba(212,160,23,0.15);
+  border: 1px solid rgba(212,160,23,0.35);
+  color: var(--color-secondary);
+  font-family: var(--family-display);
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  padding: 0.3rem 1rem;
+  border-radius: var(--radius-full);
+  margin-bottom: 0.75rem;
+}
+
+.mainTitle {
+  font-family: var(--family-devanagari);
+  font-size: clamp(1.8rem, 4vw, 3rem);
+  font-weight: 700;
+  color: #fff;
+  margin-bottom: 0.5rem;
+  text-align: center;
+  letter-spacing: 0.04em;
+  line-height: 1.3;
+}
+
+.mainSub {
+  font-size: 0.95rem;
+  color: rgba(255,255,255,0.5);
+  text-align: center;
+  margin-bottom: 3rem;
+  font-family: var(--family-body);
+  letter-spacing: 0.04em;
+}
+
+.ornament {
+  text-align: center;
+  color: var(--color-secondary);
+  font-size: 1.2rem;
+  letter-spacing: 0.4em;
+  opacity: 0.6;
+  margin-bottom: 2.5rem;
+}
+
+/* ── Tab bar ── */
+.tabs {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  justify-content: center;
+  margin-bottom: 2.5rem;
+}
+
+.tab {
+  background: rgba(255,255,255,0.05);
+  border: 1px solid rgba(212,160,23,0.2);
+  color: rgba(255,255,255,0.6);
+  font-family: var(--family-devanagari);
+  font-size: 0.85rem;
+  padding: 0.45rem 1.1rem;
+  border-radius: var(--radius-full);
+  cursor: pointer;
+  transition: background 0.2s, color 0.2s, border-color 0.2s, transform 0.15s;
+  white-space: nowrap;
+}
+
+.tab:hover {
+  background: rgba(212,160,23,0.12);
+  color: var(--color-secondary);
+  border-color: rgba(212,160,23,0.5);
+  transform: translateY(-1px);
+}
+
+.tabActive {
+  background: rgba(212,160,23,0.18);
+  border-color: var(--color-secondary);
+  color: var(--color-secondary);
+  font-weight: 700;
+}
+
+/* ── Panel ── */
+.panel {
+  animation: panelFadeIn 0.45s ease;
+}
+
+@keyframes panelFadeIn {
+  from { opacity: 0; transform: translateY(16px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+.sectionHeader {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.sectionTitleSanskrit {
+  font-family: var(--family-devanagari);
+  font-size: clamp(1.6rem, 3.5vw, 2.4rem);
+  font-weight: 700;
+  color: var(--color-secondary);
+  line-height: 1.3;
+  margin-bottom: 0.25rem;
+}
+
+.sectionTitleHindi {
+  font-family: var(--family-display);
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.4);
+}
+
+.divider {
+  width: 60px;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, var(--color-secondary), transparent);
+  margin: 1rem auto;
+}
+
+/* ── Verse cards ── */
+.verses {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.verseCard {
+  background: rgba(255,255,255,0.04);
+  border: 1px solid rgba(212,160,23,0.15);
+  border-radius: var(--radius-lg);
+  padding: 2rem 2.5rem;
+  position: relative;
+  transition: background 0.25s, border-color 0.25s;
+}
+
+.verseCard:hover {
+  background: rgba(212,160,23,0.06);
+  border-color: rgba(212,160,23,0.3);
+}
+
+.verseCard::before {
+  content: '॥';
+  position: absolute;
+  top: 1rem;
+  left: 1.5rem;
+  font-family: var(--family-devanagari);
+  font-size: 1.4rem;
+  color: rgba(212,160,23,0.25);
+  line-height: 1;
+}
+
+.verseText {
+  font-family: var(--family-devanagari);
+  font-size: clamp(1rem, 2.2vw, 1.2rem);
+  color: rgba(255,255,255,0.88);
+  line-height: 1.9;
+  white-space: pre-line;
+  text-align: center;
+}
+
+.translation {
+  margin-top: 2rem;
+  padding: 1.25rem 2rem;
+  border-left: 3px solid rgba(212,160,23,0.4);
+  background: rgba(212,160,23,0.06);
+  border-radius: 0 var(--radius-md) var(--radius-md) 0;
+}
+
+.translationLabel {
+  font-family: var(--family-display);
+  font-size: 0.62rem;
+  font-weight: 700;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--color-secondary);
+  margin-bottom: 0.4rem;
+  opacity: 0.8;
+}
+
+.translationText {
+  font-family: var(--family-body);
+  font-size: 0.9rem;
+  color: rgba(255,255,255,0.6);
+  line-height: 1.7;
+  font-style: italic;
+}
+
+/* ── Footer ── */
+.shlokaFooter {
+  text-align: center;
+  margin-top: 3rem;
+  opacity: 0.5;
+  font-family: var(--family-devanagari);
+  font-size: 1rem;
+  color: var(--color-secondary);
+  letter-spacing: 0.3em;
+}
+
+/* ── Responsive ── */
+@media (max-width: 600px) {
+  .verseCard { padding: 1.5rem 1.2rem 1.5rem 1.5rem; }
+  .verseText { font-size: 0.95rem; }
+  .tabs { gap: 0.35rem; }
+  .tab { font-size: 0.78rem; padding: 0.4rem 0.85rem; }
+}
