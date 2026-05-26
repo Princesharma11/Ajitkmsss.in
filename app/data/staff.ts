@@ -1,4 +1,4 @@
-export type StaffCategory = 'security' | 'horticulture' | 'sanitation' | 'support' | 'library' | 'administration';
+export type StaffCategory = 'security' | 'horticulture' | 'sanitation' | 'support' | 'library' | 'administration' | 'faculty';
 
 export interface StaffMember {
   id: number;
@@ -17,6 +17,7 @@ export const STAFF_CATEGORIES: Record<StaffCategory, { label: string; color: str
   support:     { label: 'Support Staff',  color: '#7a4a00', icon: '💧' },
   library:        { label: 'Library',        color: '#4a1a7a', icon: '📚' },
   administration: { label: 'Administration', color: '#1a5a6a', icon: '🏛️' },
+  faculty:        { label: 'Faculty',         color: '#5a1a6a', icon: '🎓' },
 };
 
 export const STAFF: StaffMember[] = [
@@ -154,5 +155,50 @@ export const STAFF: StaffMember[] = [
     photo: '/images/staff/radha-kant-jha.jpg',
     category: 'administration',
     initials: 'RJ',
+  },
+  {
+    id: 16,
+    name: 'Binod Kumar Singh',
+    role: 'Teacher (Math & Science)',
+    mobile: '8578940688',
+    photo: '/images/staff/binod-kumar-singh.jpg',
+    category: 'faculty',
+    initials: 'BS',
+  },
+  {
+    id: 17,
+    name: 'Amit Anand',
+    role: 'Assistant Teacher (Hindi)',
+    mobile: '9661464440',
+    photo: '/images/staff/amit-anand.jpg',
+    category: 'faculty',
+    initials: 'AA',
+  },
+  {
+    id: 18,
+    name: 'Deepak Kumar',
+    role: 'Assistant Professor',
+    mobile: '9931074169',
+    photo: '/images/staff/deepak-kumar.jpg',
+    category: 'faculty',
+    initials: 'DK',
+  },
+  {
+    id: 19,
+    name: 'Reeta Kumari',
+    role: 'Assistant Professor',
+    mobile: '9631520074',
+    photo: '/images/staff/reeta-kumari.jpg',
+    category: 'faculty',
+    initials: 'RK',
+  },
+  {
+    id: 20,
+    name: 'Haldhar Rai',
+    role: 'Assistant Professor (Sociology)',
+    mobile: '9334365540',
+    photo: '/images/staff/haldhar-rai.jpg',
+    category: 'faculty',
+    initials: 'HR',
   },
 ];
