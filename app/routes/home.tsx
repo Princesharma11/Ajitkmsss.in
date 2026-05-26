@@ -351,8 +351,8 @@ export default function Home() {
       </section>
 
       <CoursesSection />
-      <SubjectsSection />
       <Shlokas />
+      <SubjectsSection />
       <LeadershipSection />
       <StaffPreviewSection />
       <CampusTourSection />

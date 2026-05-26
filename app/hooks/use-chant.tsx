@@ -46,9 +46,9 @@ export default function useChant() {
     const voice = pickVoice();
     if (voice) utterance.voice = voice;
 
-    // Slow, deep, resonant settings
-    utterance.rate = 0.55;   // very slow
-    utterance.pitch = 0.4;   // very deep
+    // Normal Hindi reading pace
+    utterance.rate = 0.85;
+    utterance.pitch = 1.0;
     utterance.volume = 1;
     utterance.lang = 'hi-IN';
 
