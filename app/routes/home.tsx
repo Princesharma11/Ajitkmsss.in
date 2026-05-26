@@ -1,9 +1,11 @@
 import type { Route } from "./+types/home";
 import { useEffect, useRef, useState } from "react";
+import { Link } from "react-router";
 import styles from "./home.module.css";
 import Navbar from "~/components/navbar/navbar";
 import Footer from "~/components/footer/footer";
 import CampusSlider from "~/components/campus-slider/campus-slider";
+import { STAFF, STAFF_CATEGORIES } from "~/data/staff";
 
 export function meta({}: Route.MetaArgs) {
   return [
@@ -137,6 +139,50 @@ function LeadershipSection() {
               </p>
             </div>
           </div>
+        </div>
+      </div>
+    </section>
+  );
+}
+
+function StaffPreviewSection() {
+  const reveal = useScrollReveal();
+  const preview = STAFF.slice(0, 4);
+  return (
+    <section className={`${styles.section} ${styles.sectionAlt}`}>
+      <div className={reveal.visible ? `${styles.sectionInner} ${styles.revealed}` : styles.sectionInner} ref={reveal.ref}>
+        <div className={styles.sectionBadge}>Our People</div>
+        <h2 className={styles.sectionTitle}>Support Staff</h2>
+        <p className={styles.sectionSub}>
+          The backbone of our institution — from security guards to gardeners, each member plays a vital role.
+        </p>
+        <div className={styles.staffPreviewGrid}>
+          {preview.map((member) => {
+            const cat = STAFF_CATEGORIES[member.category];
+            return (
+              <div key={member.id} className={styles.staffPreviewCard}>
+                <div className={styles.staffPreviewImgWrap}>
+                  {member.photo ? (
+                    <img src={member.photo} alt={member.name} className={styles.staffPreviewImg} />
+                  ) : (
+                    <div className={styles.staffPreviewAvatar} style={{ background: cat.color }}>
+                      {member.initials}
+                    </div>
+                  )}
+                </div>
+                <div className={styles.staffPreviewBody}>
+                  <div className={styles.staffPreviewCat} style={{ color: cat.color }}>{cat.icon} {cat.label}</div>
+                  <h4 className={styles.staffPreviewName}>{member.name}</h4>
+                  <div className={styles.staffPreviewRole}>{member.role}</div>
+                </div>
+              </div>
+            );
+          })}
+        </div>
+        <div className={styles.staffPreviewCta}>
+          <Link to="/staff" className={styles.staffViewAll}>
+            View Full Staff Directory ({STAFF.length} members) →
+          </Link>
         </div>
       </div>
     </section>
@@ -306,6 +352,7 @@ export default function Home() {
       <CoursesSection />
       <SubjectsSection />
       <LeadershipSection />
+      <StaffPreviewSection />
       <CampusTourSection />
       <ContactSection />
       <Footer />
