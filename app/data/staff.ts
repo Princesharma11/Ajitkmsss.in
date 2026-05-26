@@ -1,4 +1,4 @@
-export type StaffCategory = 'security' | 'horticulture' | 'sanitation' | 'support' | 'library';
+export type StaffCategory = 'security' | 'horticulture' | 'sanitation' | 'support' | 'library' | 'administration';
 
 export interface StaffMember {
   id: number;
@@ -15,7 +15,8 @@ export const STAFF_CATEGORIES: Record<StaffCategory, { label: string; color: str
   horticulture:{ label: 'Horticulture',   color: '#2d6a2d', icon: '🌿' },
   sanitation:  { label: 'Sanitation',     color: '#1a4a7a', icon: '🧹' },
   support:     { label: 'Support Staff',  color: '#7a4a00', icon: '💧' },
-  library:     { label: 'Library',        color: '#4a1a7a', icon: '📚' },
+  library:        { label: 'Library',        color: '#4a1a7a', icon: '📚' },
+  administration: { label: 'Administration', color: '#1a5a6a', icon: '🏛️' },
 };
 
 export const STAFF: StaffMember[] = [
@@ -108,5 +109,50 @@ export const STAFF: StaffMember[] = [
     photo: '/images/staff/avdhesh-kumar-mahto.jpg',
     category: 'library',
     initials: 'AM',
+  },
+  {
+    id: 11,
+    name: 'Kameshwar Pd Yadav',
+    role: 'L.D.C.',
+    mobile: '8877592043',
+    photo: '/images/staff/kameshwar-pd-yadav.jpg',
+    category: 'administration',
+    initials: 'KY',
+  },
+  {
+    id: 12,
+    name: 'Kumar Ashirvadam',
+    role: 'Accountant',
+    mobile: '9934067038',
+    photo: '/images/staff/kumar-ashirvadam.jpg',
+    category: 'administration',
+    initials: 'KA',
+  },
+  {
+    id: 13,
+    name: 'Rakesh Kumar',
+    role: 'Assistant Clerk',
+    mobile: '9709606288',
+    photo: '/images/staff/rakesh-kumar.jpg',
+    category: 'administration',
+    initials: 'RK',
+  },
+  {
+    id: 14,
+    name: 'Mamta Kumari',
+    role: 'Assistant Clerk',
+    mobile: '8102771839',
+    photo: '/images/staff/mamta-kumari.jpg',
+    category: 'administration',
+    initials: 'MK',
+  },
+  {
+    id: 15,
+    name: 'Radha Kant Jha',
+    role: 'Section Officer',
+    mobile: '9931969468',
+    photo: '/images/staff/radha-kant-jha.jpg',
+    category: 'administration',
+    initials: 'RJ',
   },
 ];
