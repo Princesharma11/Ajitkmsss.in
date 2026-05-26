@@ -1,7 +1,31 @@
-import { NavLink } from "react-router";
-import styles from "./navbar.module.css";
+import { useState, useEffect, useCallback } from 'react';
+import { NavLink } from 'react-router';
+import { Menu, X } from 'lucide-react';
+import styles from './navbar.module.css';
+
+const NAV_LINKS = [
+  { to: '/', label: 'Home', end: true },
+  { to: '/#courses', label: 'Courses' },
+  { to: '/#shlokas', label: 'Shlokas' },
+  { to: '/staff', label: 'Our People' },
+  { to: '/#campus', label: 'Campus' },
+  { to: '/#contact', label: 'Contact' },
+];
 
 export default function Navbar() {
+  const [menuOpen, setMenuOpen] = useState(false);
+
+  const closeMenu = useCallback(() => setMenuOpen(false), []);
+
+  // Close menu on resize to desktop
+  useEffect(() => {
+    const handleResize = () => {
+      if (window.innerWidth > 768) closeMenu();
+    };
+    window.addEventListener('resize', handleResize);
+    return () => window.removeEventListener('resize', handleResize);
+  }, [closeMenu]);
+
   return (
     <header className={styles.header}>
       <div className={styles.inner}>
@@ -12,17 +36,51 @@ export default function Navbar() {
             <span className={styles.brandSub}>Ajit Kumar Mehta Sanskrit Sikshan Sansthan</span>
           </div>
         </div>
+
+        {/* Desktop nav */}
         <nav className={styles.nav}>
-          <NavLink to="/" end className={({ isActive }) => isActive ? `${styles.link} ${styles.active}` : styles.link}>
-            Home
-          </NavLink>
-          <NavLink to="/#courses" className={styles.link}>Courses</NavLink>
-          <NavLink to="/#shlokas" className={styles.link}>Shlokas</NavLink>
-          <NavLink to="/staff" className={({ isActive }) => isActive ? `${styles.link} ${styles.active}` : styles.link}>Our People</NavLink>
-          <NavLink to="/#campus" className={styles.link}>Campus</NavLink>
-          <NavLink to="/#contact" className={styles.link}>Contact</NavLink>
+          {NAV_LINKS.map((link) => (
+            <NavLink
+              key={link.to}
+              to={link.to}
+              end={link.end}
+              className={({ isActive }) =>
+                isActive ? `${styles.link} ${styles.active}` : styles.link
+              }
+            >
+              {link.label}
+            </NavLink>
+          ))}
         </nav>
+
+        {/* Hamburger button — mobile only */}
+        <button
+          className={styles.hamburger}
+          aria-label={menuOpen ? 'Close menu' : 'Open menu'}
+          aria-expanded={menuOpen}
+          onClick={() => setMenuOpen((prev) => !prev)}
+        >
+          {menuOpen ? <X size={22} /> : <Menu size={22} />}
+        </button>
       </div>
+
+      {/* Mobile drawer */}
+      {menuOpen && (
+        <nav className={styles.mobileNav} onClick={closeMenu}>
+          {NAV_LINKS.map((link) => (
+            <NavLink
+              key={link.to}
+              to={link.to}
+              end={link.end}
+              className={({ isActive }) =>
+                isActive ? `${styles.mobileLink} ${styles.active}` : styles.mobileLink
+              }
+            >
+              {link.label}
+            </NavLink>
+          ))}
+        </nav>
+      )}
     </header>
   );
 }

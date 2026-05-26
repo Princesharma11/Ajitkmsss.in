@@ -16,7 +16,7 @@ export const SHLOKA_SECTIONS: ShlokaSection[] = [
       'साहस शील हृदय में भर दे,\nजीवन त्याग तपोमय कर दे,\nसंयम सत्य स्नेह का घर दे,\nस्वाभिमान भर दे॥ १॥\nहे हंसवाहिनी ज्ञानदायिनी\nअम्ब विमल मति दे। अम्ब विमल मति दे॥',
       'लव, कुश, ध्रुव, प्रह्लाद बनें हम,\nमानवता का त्रास हरें हम,\nसीता, सावित्री, दुर्गा माँ,\nफिर घर-घर भर दे॥ २॥\nहे हंसवाहिनी ज्ञानदायिनी\nअम्ब विमल मति दे। अम्ब विमल मति दे॥',
     ],
-    translation: 'O Swan-rider, giver of knowledge — bestow upon us a pure and noble intellect, O Mother.',
+    translation: 'हे हंसवाहिनी, ज्ञानदायिनी माँ — हमें विमल और पवित्र बुद्धि प्रदान करो। भारत को जगत का सिरमौर बनाने का बल और विक्रम दो।',
   },
   {
     id: 'gayatri-mantra',
@@ -26,7 +26,7 @@ export const SHLOKA_SECTIONS: ShlokaSection[] = [
       'ॐ भूर्भुवः स्वः तत्सवितुर्वरेण्यं भर्गो\nदेवस्य धीमहि धियो यो नः प्रचोदयात्।',
     ],
     translation:
-      'We meditate on the glorious splendour of the Vivifying Sun; may He illuminate our intellects.',
+      'हम उस परम प्रकाशमान सूर्यदेव के दिव्य तेज का ध्यान करते हैं, जो हमारी बुद्धि को सन्मार्ग की ओर प्रेरित करें।',
   },
   {
     id: 'shanti-path',
@@ -36,7 +36,7 @@ export const SHLOKA_SECTIONS: ShlokaSection[] = [
       'ॐ द्यौः शान्तिरन्तरिक्षं शान्तिः पृथिवी शान्तिरापः\nशान्तिरोषधयः शान्ति वनस्पतयः शान्तिर्विश्वे देवाः शान्तिर्ब्रह्म शान्तिः\nसर्वं शान्तिः शान्तिरेव शान्तिः सा मा शान्तिरेधि॥\nॐ शान्तिः! शान्तिः!! शान्तिः!!!',
     ],
     translation:
-      'May there be peace in the heavens, peace in the atmosphere, peace on earth. May the waters be peaceful, may the plants be peaceful. May all the divine forces be peaceful. May all be at peace — may that peace come to me.',
+      'आकाश में शान्ति हो, अन्तरिक्ष में शान्ति हो, पृथ्वी पर शान्ति हो। जल, औषधियाँ, वनस्पतियाँ, समस्त देवता और ब्रह्म — सब में शान्ति हो। सब ओर शान्ति ही शान्ति हो — वह शान्ति हमें भी प्राप्त हो।',
   },
   {
     id: 'swastivachanam',
@@ -49,7 +49,7 @@ export const SHLOKA_SECTIONS: ShlokaSection[] = [
       'ॐ विष्णोर्राटमसि विष्णोः शनपेस्थो विष्णोः स्यूरसि\nविष्णोधृुवोऽसि वैष्णवमसि विष्णवे त्वा ॥४॥',
     ],
     translation:
-      'Auspicious prayers invoking Ganesha, Indra, Pusha, and Vishnu — seeking protection, abundance, and well-being for all.',
+      'गणपति, इन्द्र, पूषा और विष्णु का आह्वान करते हुए हम मंगल, समृद्धि और सबके कल्याण की कामना करते हैं। सभी दिशाओं में दूध, अन्न और जल की वर्षा हो।',
   },
   {
     id: 'raksha-vidhanam',
@@ -64,7 +64,7 @@ export const SHLOKA_SECTIONS: ShlokaSection[] = [
       'शान्ताकारं भुजगशयनं पद्मनाभं सुरेशम्,\nविश्वाधारं गगनसदृशं मेघवर्णं शुभांगम्।\nलक्ष्मीकान्तं कमलनयनं योगिभिर्ध्यानगम्यम्,\nवन्दे विष्णुं भवभयहरं सर्वलोकैकनाथम्॥',
     ],
     translation:
-      'Prayers seeking divine protection and auspiciousness — salutations to Devi, Ganesha, Vishnu and all the divine forces that remove obstacles.',
+      'हे देवी नारायणी, आप सर्वमंगलमयी हैं। श्वेत वस्त्रधारी गणेश जी का ध्यान करने से सभी विघ्न दूर होते हैं। जिनके हृदय में भगवान विष्णु निवास करते हैं, उनका कोई अमंगल नहीं होता।',
   },
   {
     id: 'vandana-shlokas',
@@ -76,7 +76,7 @@ export const SHLOKA_SECTIONS: ShlokaSection[] = [
       'शुक्लां ब्रह्मविचारसारपरमामाद्यां जगद्व्यापिनीं,\nवीणापुस्तकधारणीमभयदां जाड्यान्धकारापहाम्।\nहस्ते स्फाटिकामालिकां विदधतीं पद्यासने संस्थितां,\nवन्दे तां परमेश्वरीं भगवतीं बुद्धिप्रदां शारदाम्॥',
     ],
     translation:
-      'Salutations to Lord Shiva the cosmic cause, to the Mahamrityunjaya (death-conquering mantra), and to Goddess Sharada who bestows divine wisdom.',
+      'भगवान शिव-शंकर को वन्दन, जो जगत के कारण और पशुपति हैं। महामृत्युञ्जय मंत्र द्वारा मृत्यु के बन्धन से मुक्ति की प्रार्थना। माँ शारदा को नमन जो श्वेत वस्त्र धारण किए, वीणा-पुस्तक लिए, अज्ञानान्धकार को दूर करने वाली हैं।',
   },
   {
     id: 'puja-mantras',
@@ -88,6 +88,6 @@ export const SHLOKA_SECTIONS: ShlokaSection[] = [
       'ॐ स्थानदेवताभ्यो नमः।\nॐ वास्तुदेवताभ्यो नमः।\nॐ सर्वेभ्यो देवेभ्यो नमः।\nॐ सर्वेभ्यो ब्राह्मणेभ्यो नमः।\nॐ सर्वेभ्यस्तीर्थेभ्यो नमः।\nॐ पुण्यं पुण्याहं दीर्घमायुरस्तु।\nसर्वारिष्ठ सुशान्तिर्भवतु!',
     ],
     translation:
-      'Salutations to Ganesha who removes all obstacles, and namaskara to all divine forces — the Navadurga, Navagraha, ancestors, and all benevolent deities.',
+      'जिन्हें देवता और असुर दोनों पूजते हैं, सभी विघ्नों को हरने वाले श्री गणाधिपति को नमस्कार। लक्ष्मी-नारायण, उमा-महेश्वर, वाणी-ब्रह्मा, माता-पिता, कुलदेवता और समस्त देवी-देवताओं को नमन।',
   },
 ];

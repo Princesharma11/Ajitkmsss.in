@@ -1,11 +1,28 @@
-import { useState } from 'react';
+import { useState, useCallback } from 'react';
+import { Volume2, VolumeX } from 'lucide-react';
 import styles from './shlokas.module.css';
 import { SHLOKA_SECTIONS } from '~/data/shlokas';
+import useChant from '~/hooks/use-chant';
 
 export default function Shlokas() {
   const [activeId, setActiveId] = useState(SHLOKA_SECTIONS[0].id);
+  const { chanting, startChant, stopChant } = useChant();
 
   const active = SHLOKA_SECTIONS.find((s) => s.id === activeId) ?? SHLOKA_SECTIONS[0];
+
+  const handleTabChange = useCallback((id: string) => {
+    stopChant();
+    setActiveId(id);
+  }, [stopChant]);
+
+  const handleChantToggle = useCallback(() => {
+    if (chanting) {
+      stopChant();
+    } else {
+      const fullText = active.verses.join(' ');
+      startChant(fullText);
+    }
+  }, [chanting, startChant, stopChant, active]);
 
   return (
     <section id="shlokas" className={styles.shlokaSection}>
@@ -25,7 +42,7 @@ export default function Shlokas() {
             <button
               key={s.id}
               className={`${styles.tab} ${activeId === s.id ? styles.tabActive : ''}`}
-              onClick={() => setActiveId(s.id)}
+              onClick={() => handleTabChange(s.id)}
             >
               {s.titleSanskrit}
             </button>
@@ -47,9 +64,22 @@ export default function Shlokas() {
             ))}
           </div>
 
+          {/* Chant button */}
+          <div className={styles.chantRow}>
+            <button
+              className={`${styles.chantBtn} ${chanting ? styles.chantingActive : ''}`}
+              onClick={handleChantToggle}
+              aria-label={chanting ? 'Stop chanting' : 'Start chanting'}
+            >
+              {chanting ? <VolumeX size={17} /> : <Volume2 size={17} />}
+              <span>{chanting ? 'Stop Chanting' : 'Chant This Shloka'}</span>
+              {chanting && <span className={styles.pulse} />}
+            </button>
+          </div>
+
           {active.translation && (
             <div className={styles.translation}>
-              <div className={styles.translationLabel}>Meaning</div>
+              <div className={styles.translationLabel}>अर्थ (Hindi Meaning)</div>
               <p className={styles.translationText}>{active.translation}</p>
             </div>
           )}
