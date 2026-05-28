@@ -127,9 +127,8 @@ function LeadershipSection() {
           </div>
           <div className={styles.leaderCard}>
             <div className={styles.leaderImageWrap}>
-              <div className={styles.leaderAvatarPlaceholder}>
-                <span>US</span>
-              </div>
+              <img src="/images/staff/umakant-singh.jpg" alt="Umakant Singh" className={styles.leaderImage} />
+              <div className={styles.leaderImageGlow} />
             </div>
             <div className={styles.leaderInfo}>
               <div className={styles.leaderRole}>Secretary</div>
